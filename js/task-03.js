@@ -12,3 +12,29 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const getElementListSelectorRef = (selector, element = document) =>
+    element.querySelector(selector);
+
+const createElementListSelectorRef = (selector = 'li', element = document) =>
+    element.createElement(selector);
+
+const imageCreate = ({ url, alt }) => {
+  const elementLiRef = createElementListSelectorRef();
+  elementLiRef.className = 'gallery__item';
+
+  const elementImgRef = createElementListSelectorRef('img');
+  elementImgRef.src = url;
+  elementImgRef.alt = alt;  
+  console.log(elementImgRef);
+
+  elementLiRef.insertAdjacentElement('afterbegin', elementImgRef);
+ 
+  return elementLiRef;
+};
+
+const elements = images.map(imageCreate);
+
+const ulRef = getElementListSelectorRef('ul');
+
+ulRef.append(...elements);

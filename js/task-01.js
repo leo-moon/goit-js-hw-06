@@ -1,4 +1,4 @@
-const getElementListSelectorRef = (element, selector) =>
+const getElementListSelectorRef = (element = 'document', selector) =>
     element.querySelector(selector);
 
 const getUlListRef = getElementListSelectorRef(document,'#categories');
