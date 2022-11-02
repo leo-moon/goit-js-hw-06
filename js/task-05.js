@@ -6,10 +6,8 @@ const nameOutputRef = getElementListSelectorRef('#name-output');
 const nameOutputRefAnonimus = nameOutputRef.textContent;
 
 const onInputCheck = () => {
-        console.log(nameRef.value);
         nameOutputRef.textContent = nameRef.value != '' ? 
             nameRef.value: nameOutputRefAnonimus ;
 }
 
 const onInput = nameRef.addEventListener('input', onInputCheck);
-// console.log(nameRef.value, nameRef);
