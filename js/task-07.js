@@ -1,6 +1,6 @@
 const spanRef = document.querySelector('#text');
 document
-    .querySelector('input')
+    .querySelector('#font-size-control')
     .addEventListener('input', outInputRange)
 
 function outInputRange(event) {
