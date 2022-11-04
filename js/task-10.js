@@ -3,8 +3,6 @@ function getRandomHexColor() {
 }
 
 let  amount = '';
-let  divStyle = '';
-let  backgroundColor = getRandomHexColor();
 const  widthStart = 30; 
 const  heightStart = 30;  
 const  wChange = 10; 
@@ -12,9 +10,10 @@ const  hChange = 10;
 const  border = "2px solid #222";
 
 const divStyleCreate = (i) => {
-  let width = widthStart + wChange * i;
-  let height = heightStart + hChange * i;
-  divStyle = "width: " + width + "px; height: " + height + "px; ";
+  const backgroundColor = getRandomHexColor();
+  const width = widthStart + wChange * i;
+  const height = heightStart + hChange * i;
+  let divStyle = "width: " + width + "px; height: " + height + "px; ";
   divStyle = divStyle + "background-color: " + backgroundColor + "; border: 2px solid #222";
   return divStyle;
 };
@@ -28,7 +27,7 @@ const refs = {
 
 
 
-console.log(wChange*3 + 'px', width, divStyle, refs);
+// console.log(wChange*3 + 'px', width, divStyle, refs);
 
 
 
