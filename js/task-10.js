@@ -31,7 +31,7 @@ const inputAmount = (e) => {
   console.log(amount);
 };
 
-const destroyDivs = () => {
+const destroyBoxes = () => {
   console.log('death')
   refs.div.innerHTML = '';
   document.location.reload();
@@ -52,4 +52,4 @@ const createBoxes = () => {
 
 refs.input.addEventListener('input', inputAmount);
 refs.btnCreate.addEventListener('click', createBoxes);
-refs.btnDestroy.addEventListener('click', destroyDivs);
+refs.btnDestroy.addEventListener('click', destroyBoxes);
