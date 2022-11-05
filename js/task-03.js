@@ -28,7 +28,7 @@ const imageCreate = ({ url, alt }) => {
   elementImgRef.src = url;
   elementImgRef.alt = alt;  
   elementImgRef.style = 'object-fit: contain;';
-  console.log(elementImgRef);
+  // console.log(elementImgRef);
 
   elementLiRef.insertAdjacentElement('afterbegin', elementImgRef);
  
@@ -36,7 +36,7 @@ const imageCreate = ({ url, alt }) => {
 };
 
 const elements = images.map(imageCreate);
-console.log(elements);
+// console.log(elements);
 
 const ulRef = document.querySelector('ul');
 // ulRef.style = 'display: flex; flex-wrap: wrap; gap: 30px;';
