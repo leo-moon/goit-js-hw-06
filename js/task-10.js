@@ -34,6 +34,7 @@ const inputAmount = (e) => {
 const destroyDivs = () => {
   console.log('death')
   refs.div.innerHTML = '';
+  document.location.reload();
 }
 
 const createBoxes = () => {
