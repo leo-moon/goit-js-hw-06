@@ -2,7 +2,14 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-let  amount = '';
+const refs = {
+  div: document.querySelector('#boxes'),
+  input: document.querySelector('input'),
+  btnCreate: document.querySelector('button[data-create]'),
+  btnDestroy: document.querySelector('button[data-destroy]'),
+};
+ 
+let  amount = 0;
 let  width = 30; 
 let  height = 30;  
 const  wChange = 10; 
@@ -19,31 +26,30 @@ const divStyleCreate = () => {
   return divStyle;
 };
 
-const refs = {
-  div: document.querySelector('#boxes'),
-  input: document.querySelector('input'),
-  btnCreate: document.querySelector('button[data-create]'),
-  btnDestroy: document.querySelector('button[data-destroy]'),
-};
- 
 const inputAmount = (e) => {
-  amount = Number(e.target.value);
-  refs.btnCreate.addEventListener('click', createBoxes(amount));
+  amount = parseInt(e.target.value);
+  console.log(amount);
 };
 
-refs.input.addEventListener('blur', inputAmount);
-let elements = '';
-function createBoxes(amount) {
-  
-  for (let i = 0; i < amount; i++) {
-    const divCreateItem = document.createElement('div');
-    // console.log(divCreateItem);
-    divCreateItem.style = divStyleCreate();
-    // elements.push(divCreateItem);
-    console.log(divsArray, divsArrayItems);
-    elements.insertAdjacentElement('afterend', divsItems);
+const destroy = () => {
+  console.log('death')
+  refs.div.innerHTML = ' ';
+}
+
+const createBoxes = () => {
+  refs.btnDestroy = document.addEventListener('click', destroy);
+  console.log('hi')
+  let elements = [];
+    for (let i = 0; i < amount; i++) {
+      let divItem = document.createElement('div');
+      divItem.style = divStyleCreate();
+      elements.push(divItem);
+    };
+    console.log(elements);
+    refs.div.append(...elements);
   };
-  return elements;
-};
 
-refs.div.insertAdjacentElement('afterbegin', elements);
+refs.input.addEventListener('input', inputAmount);
+refs.btnCreate.addEventListener('click', createBoxes);
+
+// refs.input.addEventListener('blur', inputAmount);

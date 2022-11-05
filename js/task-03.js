@@ -34,6 +34,7 @@ const imageCreate = ({ url, alt }) => {
 };
 
 const elements = images.map(imageCreate);
+console.log(elements);
 
 document
   .querySelector('ul')
