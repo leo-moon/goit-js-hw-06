@@ -22,10 +22,12 @@ const createElementListSelectorRef = (selector = 'li', element = document) =>
 const imageCreate = ({ url, alt }) => {
   const elementLiRef = createElementListSelectorRef();
   elementLiRef.className = 'gallery__item';
+  // elementLiRef.style = 'width: calc((100% - 30px)/3); margin-left: 5px; margin-right: 5px'
 
   const elementImgRef = createElementListSelectorRef('img');
   elementImgRef.src = url;
   elementImgRef.alt = alt;  
+  elementImgRef.style = 'object-fit: contain;';
   console.log(elementImgRef);
 
   elementLiRef.insertAdjacentElement('afterbegin', elementImgRef);
@@ -36,6 +38,8 @@ const imageCreate = ({ url, alt }) => {
 const elements = images.map(imageCreate);
 console.log(elements);
 
-document
-  .querySelector('ul')
-  .append(...elements);
+const ulRef = document.querySelector('ul');
+// ulRef.style = 'display: flex; flex-wrap: wrap; gap: 30px;';
+ulRef.style = 'display: flex';
+
+ulRef.append(...elements);

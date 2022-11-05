@@ -33,7 +33,7 @@ const inputAmount = (e) => {
 
 const destroy = () => {
   console.log('death')
-  refs.div.innerHTML = ' ';
+  refs.div.innerHTML = '';
 }
 
 const createBoxes = () => {
