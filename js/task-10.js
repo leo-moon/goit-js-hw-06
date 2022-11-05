@@ -3,18 +3,19 @@ function getRandomHexColor() {
 }
 
 let  amount = '';
-const  widthStart = 30; 
-const  heightStart = 30;  
+let  width = 30; 
+let  height = 30;  
 const  wChange = 10; 
 const  hChange = 10;
-const  border = "2px solid #222";
 
-const divStyleCreate = (i) => {
+const divStyleCreate = () => {
   const backgroundColor = getRandomHexColor();
-  const width = widthStart + wChange * i;
-  const height = heightStart + hChange * i;
-  let divStyle = "width: " + width + "px; height: " + height + "px; ";
-  divStyle = divStyle + "background-color: " + backgroundColor + "; border: 2px solid #222";
+  let divStyle = "width: "+ 
+                width + "px; height: "+ 
+                height + "px; background-color: "+ 
+                backgroundColor + "; border: 2px solid #222";
+  width += wChange;
+  height += hChange;  
   return divStyle;
 };
 
@@ -24,25 +25,25 @@ const refs = {
   btnCreate: document.querySelector('button[data-create]'),
   btnDestroy: document.querySelector('button[data-destroy]'),
 };
-
-
-
-// console.log(wChange*3 + 'px', width, divStyle, refs);
-
-
-
  
 const inputAmount = (e) => {
   amount = Number(e.target.value);
-  refs.btnCreate.addEventListener('click', createBoxes);
+  refs.btnCreate.addEventListener('click', createBoxes(amount));
 };
 
 refs.input.addEventListener('blur', inputAmount);
-
-function createBoxes() {
+let elements = '';
+function createBoxes(amount) {
   
-  refs.div.style = divStyleCreate(amount);
-  console.log('createBoxes',amount);
+  for (let i = 0; i < amount; i++) {
+    const divCreateItem = document.createElement('div');
+    // console.log(divCreateItem);
+    divCreateItem.style = divStyleCreate();
+    // elements.push(divCreateItem);
+    console.log(divsArray, divsArrayItems);
+    elements.insertAdjacentElement('afterend', divsItems);
+  };
+  return elements;
 };
 
-
+refs.div.insertAdjacentElement('afterbegin', elements);

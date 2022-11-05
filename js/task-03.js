@@ -35,6 +35,6 @@ const imageCreate = ({ url, alt }) => {
 
 const elements = images.map(imageCreate);
 
-const ulRef = getElementListSelectorRef('ul');
-
-ulRef.append(...elements);
+document
+  .querySelector('ul')
+  .append(...elements);
