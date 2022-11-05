@@ -24,6 +24,6 @@ button {
 }
 
 img {
-  width: calc((100%-3px)/1); 
+  width: calc((90%-3px)/1); 
   margin: 0 5px;
 }
