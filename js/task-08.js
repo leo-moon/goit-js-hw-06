@@ -42,11 +42,11 @@ const onBtnSubmit = event => {
     const mailValueValid = refs.email.value.indexOf('@');
     
     if (!(mailValueFull && passValueFull)) {
-        console.log('Bсе поля должны быть заполнены!!!');
+        alert('Bсе поля должны быть заполнены!!!');
         return
     } 
     else if ((mailValueValid) < 1) {
-        console.log('Email is not valid!!!');
+        alert('Email is not valid!!!');
         return
     };
 

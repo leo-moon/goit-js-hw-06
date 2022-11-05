@@ -28,7 +28,7 @@ const divStyleCreate = () => {
 
 const inputAmount = (e) => {
   amount = parseInt(e.target.value);
-  console.log(amount);
+  refs.btnCreate.addEventListener('click', createBoxes);
 };
 
 const destroyBoxes = () => {
@@ -38,8 +38,8 @@ const destroyBoxes = () => {
 }
 
 const createBoxes = () => {
-  // refs.btnDestroy = document.addEventListener('click', destroy);
-  console.log('hi')
+  refs.btnDestroy.addEventListener('click', destroyBoxes);
+  // console.log('hi')
   let elements = [];
     for (let i = 0; i < amount; i++) {
       let divItem = document.createElement('div');
@@ -51,5 +51,3 @@ const createBoxes = () => {
   };
 
 refs.input.addEventListener('input', inputAmount);
-refs.btnCreate.addEventListener('click', createBoxes);
-refs.btnDestroy.addEventListener('click', destroyBoxes);
