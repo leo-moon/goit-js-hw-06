@@ -31,13 +31,13 @@ const inputAmount = (e) => {
   console.log(amount);
 };
 
-const destroy = () => {
+const destroyDivs = () => {
   console.log('death')
   refs.div.innerHTML = '';
 }
 
 const createBoxes = () => {
-  refs.btnDestroy = document.addEventListener('click', destroy);
+  // refs.btnDestroy = document.addEventListener('click', destroy);
   console.log('hi')
   let elements = [];
     for (let i = 0; i < amount; i++) {
@@ -51,5 +51,4 @@ const createBoxes = () => {
 
 refs.input.addEventListener('input', inputAmount);
 refs.btnCreate.addEventListener('click', createBoxes);
-
-// refs.input.addEventListener('blur', inputAmount);
+refs.btnDestroy.addEventListener('click', destroyDivs);
