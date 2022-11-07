@@ -4,19 +4,13 @@ const refs = {
     password: document.querySelector('input[type = password]'),
 };
 
-let formData = [];
+let formData = {};
 
 function clearFormValues() {
     refs.form.reset();
 };
 
-const formDataItemAdd = ({ name, value }) => {
-    const formDataItem = {
-        name: name,
-        value: value,
-    };
-    formData.push(formDataItem);
-};
+const formDataItemAdd = ({ name, value }) => formData[name] = value;
 
 const addToFormData = () => {
     for (const element of refs.form.elements) {
@@ -50,8 +44,9 @@ const onBtnSubmit = event => {
         return
     };
 
-    formData.splice(0, formData.length);
+    // formData.splice(0, formData.length);
     addToFormData();
+    // formData.forEach( );
     console.log(formData);
     clearFormValues();
 };
