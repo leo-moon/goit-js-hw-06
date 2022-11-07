@@ -44,9 +44,7 @@ const onBtnSubmit = event => {
         return
     };
 
-    // formData.splice(0, formData.length);
     addToFormData();
-    // formData.forEach( );
     console.log(formData);
     clearFormValues();
 };
